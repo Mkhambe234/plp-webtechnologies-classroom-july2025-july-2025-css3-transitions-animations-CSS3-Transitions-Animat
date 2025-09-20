@@ -1,0 +1,302 @@
+/* 🎨✨ Part 1: CSS3 Transitions and Animations */
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f5f0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 30px 0;
+    background-color: #d4e6f1;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+h1 {
+    color: #5d4037;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #7d5ba6;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #5d4037;
+    margin-bottom: 15px;
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-20px); }
+    60% { transform: translateY(-10px); }
+}
+
+@keyframes flip {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(180deg); }
+}
+
+.animated-text {
+    animation: fadeIn 2s;
+}
+
+/* Button styles with transitions */
+button {
+    background-color: #8e7cc3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #6b5b95;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Card flip animation */
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-front {
+    background-color: #d4e6f1;
+}
+
+.card-back {
+    background-color: #e8dff5;
+    transform: rotateY(180deg);
+}
+
+.card-image {
+    height: 180px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 15px 0;
+}
+
+.bunny {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23f9c9c9" /><circle cx="35" cy="40" r="5" fill="black" /><circle cx="65" cy="40" r="5" fill="black" /><path d="M40,65 Q50,75 60,65" stroke="black" fill="transparent" stroke-width="2" /><path d="M30,30 L20,20 M70,30 L80,20" stroke="black" stroke-width="3" /></svg>');
+}
+
+.blanket {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="10" y="10" width="80" height="80" fill="%23c9daf8" stroke="%235a6ab8" stroke-width="2" /><rect x="20" y="20" width="20" height="20" fill="%23e06666" /><rect x="60" y="20" width="20" height="20" fill="%2393c47d" /><rect x="20" y="60" width="20" height="20" fill="%23ffd966" /><rect x="60" y="60" width="20" height="20" fill="%238e7cc3" /></svg>');
+}
+
+.shawl {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M10,50 Q50,10 90,50 Q50,90 10,50" fill="%23d5a6bd" stroke="%237d5ba6" stroke-width="2" /><path d="M30,50 Q50,30 70,50 Q50,70 30,50" fill="%23ead1dc" /></svg>');
+}
+
+/* Calculator styles */
+.calculator {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.calc-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.result-box {
+    padding: 15px;
+    background-color: #e8dff5;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.result-box.highlight {
+    animation: pulse 1s;
+    background-color: #d4e6f1;
+}
+
+/* Pattern maker styles */
+.pattern-maker {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stitch-palette {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.stitch {
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.stitch.selected {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.single-crochet {
+    background-color: #c9daf8;
+}
+
+.double-crochet {
+    background-color: #d9d2e9;
+}
+
+.half-double {
+    background-color: #fff2cc;
+}
+
+.pattern-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 40px);
+    grid-template-rows: repeat(10, 40px);
+    gap: 2px;
+    justify-content: center;
+}
+
+.grid-cell {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.grid-cell.sc {
+    background-color: #c9daf8;
+}
+
+.grid-cell.dc {
+    background-color: #d9d2e9;
+}
+
+.grid-cell.hdc {
+    background-color: #fff2cc;
+}
+
+.grid-cell.animated {
+    animation: bounce 0.5s;
+}
+
+.pattern-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #d4e6f1;
+    border-radius: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .project-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .pattern-grid {
+        grid-template-columns: repeat(10, 30px);
+        grid-template-rows: repeat(10, 30px);
+    }
+    
+    .grid-cell {
+        width: 30px;
+        height: 30px;
+    }
+}

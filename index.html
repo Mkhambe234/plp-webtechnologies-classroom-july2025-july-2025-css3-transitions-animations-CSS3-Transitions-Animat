@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Crochet Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 🎬 Part 1: CSS Animations -->
+    <header>
+        <h1>Crochet Creations</h1>
+        <p>Discover the art of yarn and hook</p>
+    </header>
+
+    <main>
+        <section class="intro">
+            <div class="animated-text">
+                <h2>Welcome to our cozy corner</h2>
+                <p>Where every stitch tells a story</p>
+            </div>
+        </section>
+
+        <!-- 🧶 Crochet Gallery -->
+        <section class="gallery">
+            <h2>Featured Projects</h2>
+            <div class="project-cards">
+                <div class="card" id="card1">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Amigurumi Bunny</h3>
+                            <div class="card-image bunny"></div>
+                            <button class="flip-btn">Learn More</button>
+                        </div>
+                        <div class="card-back">
+                            <h3>Pattern Details</h3>
+                            <p>Skill Level: Intermediate</p>
+                            <p>Yarn: Worsted Weight</p>
+                            <p>Hook: 3.5mm</p>
+                            <button class="flip-btn">Back</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" id="card2">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Granny Square Blanket</h3>
+                            <div class="card-image blanket"></div>
+                            <button class="flip-btn">Learn More</button>
+                        </div>
+                        <div class="card-back">
+                            <h3>Pattern Details</h3>
+                            <p>Skill Level: Beginner</p>
+                            <p>Yarn: Chunky Weight</p>
+                            <p>Hook: 5.5mm</p>
+                            <button class="flip-btn">Back</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" id="card3">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Lacy Shawl</h3>
+                            <div class="card-image shawl"></div>
+                            <button class="flip-btn">Learn More</button>
+                        </div>
+                        <div class="card-back">
+                            <h3>Pattern Details</h3>
+                            <p>Skill Level: Advanced</p>
+                            <p>Yarn: Fingering Weight</p>
+                            <p>Hook: 2.5mm</p>
+                            <button class="flip-btn">Back</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🧮 Yarn Calculator -->
+        <section class="calculator">
+            <h2>Yarn Calculator</h2>
+            <div class="calc-container">
+                <div class="input-group">
+                    <label for="project-type">Project Type:</label>
+                    <select id="project-type">
+                        <option value="scarf">Scarf</option>
+                        <option value="hat">Hat</option>
+                        <option value="blanket">Blanket</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="size">Size (inches):</label>
+                    <input type="number" id="size" min="10" max="100" value="60">
+                </div>
+                <div class="input-group">
+                    <label for="gauge">Gauge (stitches per inch):</label>
+                    <input type="number" id="gauge" min="1" max="10" value="4">
+                </div>
+                <button id="calculate-btn">Calculate Yarn Needed</button>
+                <div id="result" class="result-box">
+                    <p>Enter values and click calculate</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🎨 Interactive Section -->
+        <section class="interactive">
+            <h2>Create Your Pattern</h2>
+            <div class="pattern-maker">
+                <div class="stitch-palette">
+                    <div class="stitch single-crochet" data-stitch="sc">Single Crochet</div>
+                    <div class="stitch double-crochet" data-stitch="dc">Double Crochet</div>
+                    <div class="stitch half-double" data-stitch="hdc">Half Double</div>
+                </div>
+                <div class="pattern-grid" id="pattern-grid">
+                    <!-- Grid will be generated by JavaScript -->
+                </div>
+                <div class="pattern-controls">
+                    <button id="clear-btn">Clear Pattern</button>
+                    <button id="animate-btn">Animate Pattern</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made with ❤️ and CSS/JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
